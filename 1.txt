@@ -1,0 +1,56 @@
+package Baitaptugiai;
+
+import java.awt.Container;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class tinhsole extends JFrame implements ActionListener {
+	JLabel nhapns;
+	JTextField nhapn;
+	JLabel kqs;
+	JTextField kq;
+	JButton tinh;
+	public tinhsole() {
+		nhapns = new JLabel();
+		nhapns.setText("Nhap n");
+		nhapn = new JTextField(15);
+		kqs = new JLabel();
+		kqs.setText("ket qua la");
+		kq = new JTextField(15);
+		tinh = new JButton();
+		tinh.setText("Tinh Tong");
+		tinh.addActionListener(this);
+		Container tt = this.getContentPane();
+		setSize(330, 550);
+		tt.setLayout(new FlowLayout());
+		tt.add(nhapns);
+		tt.add(nhapn);
+		tt.add(kqs);
+		tt.add(kq);
+		tt.add(tinh);
+		setVisible(true);
+	}
+	public void actionPerformed(ActionEvent e) {
+		String sn = nhapn.getText();
+		int n= Integer.parseInt(sn);
+		float s=0;
+		for(int i=1;i<=n;i++) {
+			s=s+1/(float)i;
+		}
+		kq.setText(String.valueOf(s));	
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		tinhsole obj = new tinhsole();
+
+	}
+
+}
