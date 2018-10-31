@@ -1,0 +1,61 @@
+package Baitaptugiai;
+
+import java.awt.Container;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+public class Login extends JFrame implements ActionListener {
+	JLabel lblname;
+	JTextField tfname;
+	JLabel lblpass;
+	JTextField tfpass;
+	JButton btlogin;
+	JTextField tflogin;
+	JButton btrgt;
+	JTextField tfrgt;
+public Login() {
+	lblname = new JLabel();
+	lblname.setText(" User Name ");
+	tfname = new JTextField(15);
+    lblpass = new JLabel();
+	lblpass.setText(" Pass word ");
+	tfpass = new JTextField(15);
+	btlogin = new JButton();
+	btlogin.setText("Login");
+	btrgt = new JButton();
+	btrgt.setText("Register");
+	btlogin.addActionListener(this);
+	btrgt.addActionListener(this);
+	Container lg = this.getContentPane();
+	setSize(350,530);
+	lg.setLayout(new FlowLayout());
+	lg.add(lblname);
+	lg.add(tfname);
+	lg.add(lblpass);
+	lg.add(tfpass);
+	lg.add(btlogin);
+	lg.add(btrgt);
+	setVisible(true);
+	
+}
+public void actionPerformed (ActionEvent e) {
+	JOptionPane.showConfirmDialog(null,tfname.getText()+" ABC");
+}
+	
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Login obj = new Login();
+
+	}
+
+}
